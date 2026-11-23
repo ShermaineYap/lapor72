@@ -124,3 +124,5 @@ button { font: inherit; }
 .missed { margin: 8px 0 4px; }
 .missed summary { cursor: pointer; color: var(--local); font-weight: 600; }
 .missed-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.netcount { display: block; font-size: .78rem; font-weight: 700; margin-top: 2px; }
+.net-none { color: var(--local); } .net-out { color: var(--cloud); }

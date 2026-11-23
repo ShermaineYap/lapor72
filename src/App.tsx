@@ -14,7 +14,23 @@ const MODEL_CHAR_LIMIT = 6000;
 const CONTACT_PLACEHOLDER = '[CONTACT_PERSON]';
 type Step = 1 | 2 | 3 | 4 | 5;
 type RunSource = Source | 'rules' | 'recorded';
-interface RunLog { what: string; source: RunSource; ms: number }
+interface RunLog { what: string; source: RunSource; ms: number; requests?: number }
+
+/** Counts requests that left the browser (other origins, excluding fonts) while `fn` runs. */
+async function countRequests<T>(fn: () => Promise<T>): Promise<{ value: T; requests: number }> {
+  const seen: string[] = [];
+  const isExternal = (e: PerformanceEntry) => {
+    const u = new URL(e.name);
+    return u.origin !== location.origin && !u.host.startsWith('fonts.');
+  };
+  const obs = new PerformanceObserver((list) => list.getEntries().filter(isExternal).forEach((e) => seen.push(e.name)));
+  obs.observe({ type: 'resource', buffered: false });
+  try {
+    const value = await fn();
+    await new Promise((r) => setTimeout(r, 300)); // let the last entries arrive
+    return { value, requests: seen.length };
+  } finally { obs.disconnect(); }
+}
 
 const myt = (d: Date) =>
   d.toLocaleString('en-MY', { timeZone: 'Asia/Kuala_Lumpur', weekday: 'short', day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: '2-digit' }) + ' (Malaysia time)';
@@ -153,9 +169,9 @@ export default function App() {
         setDevice(await deviceStatus()); setProgress(null);
       }
       if ((await deviceStatus()) === 'available') {
-        const r = await classifyOnDevice(leak.slice(0, MODEL_CHAR_LIMIT), image ?? undefined);
+        const { value: r, requests } = await countRequests(() => classifyOnDevice(leak.slice(0, MODEL_CHAR_LIMIT), image ?? undefined));
         setModelCats(r.categories);
-        logRun({ what: 'Gemini Nano read the leak', source: r.source, ms: r.ms });
+        logRun({ what: 'Gemini Nano read the leak', source: r.source, ms: r.ms, requests });
         found = new Set([...found, ...r.categories]);
       } else if (leak === SAMPLE.leak && !image) {
         setModelCats([...RECORDED.categories]);
@@ -178,8 +194,9 @@ export default function App() {
     if ((await deviceStatus()) === 'available') {
       const t = performance.now();
       try {
-        modelFlagged = await findNamesAndAddresses(free);
-        logRun({ what: 'Gemini Nano looked for names and addresses in your answers', source: 'on_device', ms: Math.round(performance.now() - t) });
+        const { value, requests } = await countRequests(() => findNamesAndAddresses(free));
+        modelFlagged = value;
+        logRun({ what: 'Gemini Nano looked for names and addresses in your answers', source: 'on_device', ms: Math.round(performance.now() - t), requests });
       } catch { /* rules still run below */ }
     } else if (howDiscovered === SAMPLE.howDiscovered) {
       modelFlagged = [...RECORDED.answerNames];
@@ -217,7 +234,7 @@ export default function App() {
     if (!outbound?.safe) return;
     setDrafting('working'); setDraftNote('');
     try {
-      const r = await draftNotices(outbound.sheet, (n) => setDraftNote(`Gemini is busy. Trying again (${n} of 2)…`));
+      const { value: r, requests } = await countRequests(() => draftNotices(outbound.sheet, (n) => setDraftNote(`Gemini is busy. Trying again (${n} of 2)…`)));
       saveCase({ id: caseId, organisation: org || 'Unnamed organisation', commissionerDeadline: assessment.commissionerDeadline?.toISOString() ?? null, sheet: outbound.sheet, drafts: r.drafts })
         .then(() => { setSaveNote('Saved to your case file in Firestore: the redacted fact sheet and drafts only.'); listCases().then(setSaved).catch(() => {}); })
         .catch(() => setSaveNote('Could not save the case file. Your drafts are still here.'));
@@ -226,7 +243,7 @@ export default function App() {
         commissionerNotice: fill(r.drafts.commissionerNotice), customerNoticeEn: fill(r.drafts.customerNoticeEn),
         customerNoticeMs: fill(r.drafts.customerNoticeMs), incidentLog: fill(r.drafts.incidentLog),
       });
-      logRun({ what: `${r.model} drafted the notices from the fact sheet`, source: r.source, ms: r.ms });
+      logRun({ what: `${r.model} drafted the notices from the fact sheet`, source: r.source, ms: r.ms, requests });
       if (contact.trim()) logRun({ what: 'Your contact person was put back into the drafts', source: 'rules', ms: 0 });
       setDrafting('idle'); setStep(5);
     } catch (e) {
@@ -277,7 +294,11 @@ export default function App() {
           <div className="ledger">
             <h2>Where each step ran</h2>
             {runs.length === 0 && <p className="muted">Nothing has run yet.</p>}
-            <ul>{runs.map((r, i) => <li key={i}><Badge source={r.source} /> {r.what} <span className="muted">{r.ms} ms</span></li>)}</ul>
+            <ul>{runs.map((r, i) => (
+              <li key={i}><Badge source={r.source} /> {r.what} <span className="muted">{r.ms} ms</span>
+                {r.requests !== undefined && <span className={`netcount ${r.requests ? 'net-out' : 'net-none'}`}>{r.requests === 0 ? 'No internet requests' : `${r.requests} internet request${r.requests > 1 ? 's' : ''}`}</span>}
+              </li>
+            ))}</ul>
           </div>
         </nav>
 
@@ -339,7 +360,8 @@ export default function App() {
                     </details>
                   )}
                   {chosen.size === 0 && <p>No personal data found. If you know there was some, add it in step 2 by describing it.</p>}
-                  <p className="kept"><strong>{valuesInLeak}</strong> personal data values in {rows || 'these'} rows stayed on this device.</p>
+                  <p className="kept"><strong>{valuesInLeak}</strong> personal data values in {rows || 'these'} rows stayed on this device.
+                    {runs.find((r) => r.what === 'Gemini Nano read the leak')?.requests === 0 && ' No internet requests were made while checking.'}</p>
                   <button className="primary" onClick={() => setStep(2)}>Continue</button>
                 </div>
               )}
