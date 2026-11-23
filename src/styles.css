@@ -40,7 +40,7 @@ p { margin: .5rem 0; max-width: 68ch; }
   .clock-running .clock-digits, .clock-urgent .clock-digits { transition: color .4s; }
 }
 
-.layout { max-width: 1180px; margin: 0 auto; padding: 28px; display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 36px; align-items: start; }
+.layout { max-width: 1180px; margin: 0 auto; padding: 28px; display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 28px; align-items: start; }
 .rail ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
 .rail-step { width: 100%; display: flex; gap: 12px; align-items: center; text-align: left; font: inherit; color: var(--ink); background: none; border: 0; padding: 9px 10px; border-radius: 8px; cursor: pointer; }
 .rail-step:disabled { color: #98a3ad; cursor: default; }
@@ -108,12 +108,15 @@ button { font: inherit; }
 .draft-head h2 { margin: 0; }
 .draft textarea { margin-top: 8px; line-height: 1.5; }
 
-@media (max-width: 860px) {
+@media (max-width: 1000px) { .layout { grid-template-columns: 220px minmax(0, 1fr); gap: 20px; padding: 20px; } .split { grid-template-columns: 1fr; } }
+@media (max-width: 760px) {
   .layout { grid-template-columns: 1fr; padding: 16px; gap: 16px; }
-  .rail ol { grid-auto-flow: column; overflow-x: auto; }
+  .rail { display: contents; }
+  .rail ol { grid-auto-flow: column; overflow-x: auto; order: 0; }
+  .work { order: 1; }
+  .ledger { order: 2; margin-top: 0; }
   .rail-step span:last-child { display: none; }
   .rail-step.current span:last-child { display: inline; }
-  .ledger { display: none; }
   .work section { padding: 22px 18px; }
   .grid2, .verdicts, .split { grid-template-columns: 1fr; }
   .clock-inner { grid-template-columns: 1fr; padding: 14px 16px 16px; }
