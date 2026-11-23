@@ -1,0 +1,43 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Atkinson Hyperlegible Next,40,&H00FFFFFF,&H00FFFFFF,&H182B2117,&H182B2117,0,0,0,0,100,100,0,0,3,14,0,2,160,160,22,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.35,0:00:05.84,Cap,,0,0,0,,A tuition centre finds its fee spreadsheet, with parents' IC numbers and a child's allergy,
+Dialogue: 0,0:00:05.84,0:00:07.89,Cap,,0,0,0,,posted in a public Facebook group.
+Dialogue: 0,0:00:07.89,0:00:13.02,Cap,,0,0,0,,Under Malaysia's data protection law, it now has 72 hours to notify the Commissioner.
+Dialogue: 0,0:00:13.92,0:00:18.82,Cap,,0,0,0,,The tempting shortcut is to paste the list into a chatbot and ask what to do.
+Dialogue: 0,0:00:18.82,0:00:23.84,Cap,,0,0,0,,That uploads everyone's personal data a second time. Lapor72 does the opposite.
+Dialogue: 0,0:00:24.74,0:00:30.14,Cap,,0,0,0,,This is Lapor72, live in Chrome on a MacBook Air. The owner pastes the leaked rows.
+Dialogue: 0,0:00:30.14,0:00:35.86,Cap,,0,0,0,,Gemini Nano reads them on this laptop, through Firebase AI Logic in only-on-device mode,
+Dialogue: 0,0:00:35.86,0:00:39.83,Cap,,0,0,0,,together with rules for Malaysian IC, phone and bank formats.
+Dialogue: 0,0:00:40.73,0:00:42.66,Cap,,0,0,0,,Every finding shows its evidence,
+Dialogue: 0,0:00:42.66,0:00:46.74,Cap,,0,0,0,,and the step log shows it ran on the device with no internet requests.
+Dialogue: 0,0:00:46.74,0:00:51.05,Cap,,0,0,0,,The model flagged addresses that are not there, so the owner unticks them,
+Dialogue: 0,0:00:51.05,0:00:53.09,Cap,,0,0,0,,and adds the unpaid fees it missed.
+Dialogue: 0,0:00:53.99,0:00:56.69,Cap,,0,0,0,,Next, a few questions about what happened.
+Dialogue: 0,0:00:56.69,0:01:01.45,Cap,,0,0,0,,Lapor72 applies the Commissioner's breach notification tests. Health data,
+Dialogue: 0,0:01:01.45,0:01:07.17,Cap,,0,0,0,,financial details and IC numbers mean both the Commissioner and the parents must be told,
+Dialogue: 0,0:01:07.17,0:01:09.61,Cap,,0,0,0,,and the clock shows the real deadline.
+Dialogue: 0,0:01:10.51,0:01:15.09,Cap,,0,0,0,,Before anything leaves, Gemini Nano finds names in the owner's own answers,
+Dialogue: 0,0:01:15.09,0:01:17.73,Cap,,0,0,0,,and the rules remove phone numbers and IDs.
+Dialogue: 0,0:01:17.73,0:01:21.15,Cap,,0,0,0,,A final check blocks the send if anything slips through.
+Dialogue: 0,0:01:21.15,0:01:23.96,Cap,,0,0,0,,The owner sees exactly what goes to the cloud.
+Dialogue: 0,0:01:24.86,0:01:27.72,Cap,,0,0,0,,Only that redacted fact sheet goes to cloud Gemini,
+Dialogue: 0,0:01:27.72,0:01:30.19,Cap,,0,0,0,,which drafts the notice to the Commissioner,
+Dialogue: 0,0:01:30.19,0:01:33.16,Cap,,0,0,0,,and the parents' notice in English and Bahasa Melayu.
+Dialogue: 0,0:01:33.16,0:01:36.08,Cap,,0,0,0,,The contact person's name is put back on the device,
+Dialogue: 0,0:01:36.08,0:01:39.38,Cap,,0,0,0,,and the case is saved to Firestore without the leaked data.
+Dialogue: 0,0:01:40.28,0:01:46.27,Cap,,0,0,0,,We measured it. On 20 held-out synthetic records in English, Malay, Chinese and mixed text,
+Dialogue: 0,0:01:46.27,0:01:52.18,Cap,,0,0,0,,on-device Gemini Nano with rules found every kind of personal data, matching cloud Gemini,
+Dialogue: 0,0:01:52.18,0:01:56.85,Cap,,0,0,0,,in about 1.25 seconds. So there is no accuracy reason to upload a leak.
+Dialogue: 0,0:01:57.75,0:02:02.31,Cap,,0,0,0,,Each step has its own inference mode. App Check protects the cloud calls.
+Dialogue: 0,0:02:02.31,0:02:07.50,Cap,,0,0,0,,Remote Config holds the model name and the legal thresholds. The app works offline,
+Dialogue: 0,0:02:07.50,0:02:12.43,Cap,,0,0,0,,and browsers without an on-device model see a clearly labelled recorded result.
+Dialogue: 0,0:02:13.33,0:02:21.86,Cap,,0,0,0,,Lapor72. 72 hours, and the leaked records never leave your device. Try it at lapor72.web.app

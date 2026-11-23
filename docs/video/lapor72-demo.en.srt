@@ -1,0 +1,127 @@
+1
+00:00:00,350 --> 00:00:05,840
+A tuition centre finds its fee spreadsheet, with parents' IC numbers and a child's allergy,
+
+2
+00:00:05,840 --> 00:00:07,890
+posted in a public Facebook group.
+
+3
+00:00:07,890 --> 00:00:13,020
+Under Malaysia's data protection law, it now has 72 hours to notify the Commissioner.
+
+4
+00:00:13,920 --> 00:00:18,820
+The tempting shortcut is to paste the list into a chatbot and ask what to do.
+
+5
+00:00:18,820 --> 00:00:23,840
+That uploads everyone's personal data a second time. Lapor72 does the opposite.
+
+6
+00:00:24,740 --> 00:00:30,140
+This is Lapor72, live in Chrome on a MacBook Air. The owner pastes the leaked rows.
+
+7
+00:00:30,140 --> 00:00:35,860
+Gemini Nano reads them on this laptop, through Firebase AI Logic in only-on-device mode,
+
+8
+00:00:35,860 --> 00:00:39,830
+together with rules for Malaysian IC, phone and bank formats.
+
+9
+00:00:40,730 --> 00:00:42,660
+Every finding shows its evidence,
+
+10
+00:00:42,660 --> 00:00:46,740
+and the step log shows it ran on the device with no internet requests.
+
+11
+00:00:46,740 --> 00:00:51,050
+The model flagged addresses that are not there, so the owner unticks them,
+
+12
+00:00:51,050 --> 00:00:53,090
+and adds the unpaid fees it missed.
+
+13
+00:00:53,990 --> 00:00:56,690
+Next, a few questions about what happened.
+
+14
+00:00:56,690 --> 00:01:01,450
+Lapor72 applies the Commissioner's breach notification tests. Health data,
+
+15
+00:01:01,450 --> 00:01:07,170
+financial details and IC numbers mean both the Commissioner and the parents must be told,
+
+16
+00:01:07,170 --> 00:01:09,610
+and the clock shows the real deadline.
+
+17
+00:01:10,510 --> 00:01:15,090
+Before anything leaves, Gemini Nano finds names in the owner's own answers,
+
+18
+00:01:15,090 --> 00:01:17,730
+and the rules remove phone numbers and IDs.
+
+19
+00:01:17,730 --> 00:01:21,150
+A final check blocks the send if anything slips through.
+
+20
+00:01:21,150 --> 00:01:23,960
+The owner sees exactly what goes to the cloud.
+
+21
+00:01:24,860 --> 00:01:27,720
+Only that redacted fact sheet goes to cloud Gemini,
+
+22
+00:01:27,720 --> 00:01:30,190
+which drafts the notice to the Commissioner,
+
+23
+00:01:30,190 --> 00:01:33,160
+and the parents' notice in English and Bahasa Melayu.
+
+24
+00:01:33,160 --> 00:01:36,080
+The contact person's name is put back on the device,
+
+25
+00:01:36,080 --> 00:01:39,380
+and the case is saved to Firestore without the leaked data.
+
+26
+00:01:40,280 --> 00:01:46,270
+We measured it. On 20 held-out synthetic records in English, Malay, Chinese and mixed text,
+
+27
+00:01:46,270 --> 00:01:52,180
+on-device Gemini Nano with rules found every kind of personal data, matching cloud Gemini,
+
+28
+00:01:52,180 --> 00:01:56,850
+in about 1.25 seconds. So there is no accuracy reason to upload a leak.
+
+29
+00:01:57,750 --> 00:02:02,310
+Each step has its own inference mode. App Check protects the cloud calls.
+
+30
+00:02:02,310 --> 00:02:07,500
+Remote Config holds the model name and the legal thresholds. The app works offline,
+
+31
+00:02:07,500 --> 00:02:12,430
+and browsers without an on-device model see a clearly labelled recorded result.
+
+32
+00:02:13,330 --> 00:02:21,860
+Lapor72. 72 hours, and the leaked records never leave your device. Try it at lapor72.web.app

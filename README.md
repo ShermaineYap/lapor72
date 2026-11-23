@@ -2,6 +2,9 @@
 
 **A 72-hour data-breach desk for small Malaysian businesses.**
 Live app: https://lapor72.web.app (desktop Chrome for on-device checking)
+Demo video (2:23): https://youtu.be/rL3_-mp05bQ
+
+![Leak checked on-device, with no internet requests](docs/gallery/1-findings-on-device.png)
 
 Since June 2025, Malaysian organisations must tell the Personal Data Protection Commissioner about a serious
 personal data breach within 72 hours, and tell the people affected within 7 days after that. A clinic,
@@ -74,6 +77,7 @@ On localhost, App Check prints a debug token in the browser console. Register it
 - `study/` the detection study: data generators, harness page, raw results, scoring script.
 - `quickstart/` the first hybrid-inference test page.
 - `docs/DEVLOG.md` build notes and decisions.
+- `docs/video/` how the demo video was made (narration script, slide renderer, ffmpeg assembly); `docs/gallery/` screenshots.
 
 ## Built during #BuildHybridAI (11–30 November 2026)
 

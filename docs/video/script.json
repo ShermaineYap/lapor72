@@ -1,0 +1,72 @@
+[
+ {
+  "id": "s01",
+  "visual": "slide:title",
+  "say": "A tuition centre finds its fee spreadsheet, with parents' I C numbers and a child's allergy, posted in a public Facebook group. Under Malaysia's data protection law, it now has seventy-two hours to notify the Commissioner.",
+  "cap": "A tuition centre finds its fee spreadsheet, with parents' IC numbers and a child's allergy, posted in a public Facebook group. Under Malaysia's data protection law, it now has 72 hours to notify the Commissioner.",
+  "dur": 12.672653
+ },
+ {
+  "id": "s02",
+  "visual": "slide:problem",
+  "say": "The tempting shortcut is to paste the list into a chatbot and ask what to do. That uploads everyone's personal data a second time. Lapor72 does the opposite.",
+  "cap": "The tempting shortcut is to paste the list into a chatbot and ask what to do. That uploads everyone's personal data a second time. Lapor72 does the opposite.",
+  "dur": 9.915646
+ },
+ {
+  "id": "s03",
+  "visual": "frames:01,02,03",
+  "say": "This is Lapor72, live in Chrome on a MacBook Air. The owner pastes the leaked rows. Gemini Nano reads them on this laptop, through Firebase A I Logic in only-on-device mode, together with rules for Malaysian I C, phone and bank formats.",
+  "cap": "This is Lapor72, live in Chrome on a MacBook Air. The owner pastes the leaked rows. Gemini Nano reads them on this laptop, through Firebase AI Logic in only-on-device mode, together with rules for Malaysian IC, phone and bank formats.",
+  "dur": 15.093696
+ },
+ {
+  "id": "s04",
+  "visual": "frames:04,05,06",
+  "say": "Every finding shows its evidence, and the step log shows it ran on the device with no internet requests. The model flagged addresses that are not there, so the owner unticks them, and adds the unpaid fees it missed.",
+  "cap": "Every finding shows its evidence, and the step log shows it ran on the device with no internet requests. The model flagged addresses that are not there, so the owner unticks them, and adds the unpaid fees it missed.",
+  "dur": 12.359184
+ },
+ {
+  "id": "s05",
+  "visual": "frames:07,08,09",
+  "say": "Next, a few questions about what happened. Lapor72 applies the Commissioner's breach notification tests. Health data, financial details and I C numbers mean both the Commissioner and the parents must be told, and the clock shows the real deadline.",
+  "cap": "Next, a few questions about what happened. Lapor72 applies the Commissioner's breach notification tests. Health data, financial details and IC numbers mean both the Commissioner and the parents must be told, and the clock shows the real deadline.",
+  "dur": 15.616145
+ },
+ {
+  "id": "s06",
+  "visual": "frames:10,11,12",
+  "say": "Before anything leaves, Gemini Nano finds names in the owner's own answers, and the rules remove phone numbers and I Ds. A final check blocks the send if anything slips through. The owner sees exactly what goes to the cloud.",
+  "cap": "Before anything leaves, Gemini Nano finds names in the owner's own answers, and the rules remove phone numbers and IDs. A final check blocks the send if anything slips through. The owner sees exactly what goes to the cloud.",
+  "dur": 13.456689
+ },
+ {
+  "id": "s07",
+  "visual": "frames:13,14,15",
+  "say": "Only that redacted fact sheet goes to cloud Gemini, which drafts the notice to the Commissioner, and the parents' notice in English and Bahasa Melayu. The contact person's name is put back on the device, and the case is saved to Firestore without the leaked data.",
+  "cap": "Only that redacted fact sheet goes to cloud Gemini, which drafts the notice to the Commissioner, and the parents' notice in English and Bahasa Melayu. The contact person's name is put back on the device, and the case is saved to Firestore without the leaked data.",
+  "dur": 14.518639
+ },
+ {
+  "id": "s08",
+  "visual": "slide:study",
+  "say": "We measured it. On twenty held-out synthetic records in English, Malay, Chinese and mixed text, on-device Gemini Nano with rules found every kind of personal data, matching cloud Gemini, in about one and a quarter seconds. So there is no accuracy reason to upload a leak.",
+  "cap": "We measured it. On 20 held-out synthetic records in English, Malay, Chinese and mixed text, on-device Gemini Nano with rules found every kind of personal data, matching cloud Gemini, in about 1.25 seconds. So there is no accuracy reason to upload a leak.",
+  "dur": 16.568163
+ },
+ {
+  "id": "s09",
+  "visual": "slide:architecture",
+  "say": "Each step has its own inference mode. App Check protects the cloud calls. Remote Config holds the model name and the legal thresholds. The app works offline, and browsers without an on-device model see a clearly labelled recorded result.",
+  "cap": "Each step has its own inference mode. App Check protects the cloud calls. Remote Config holds the model name and the legal thresholds. The app works offline, and browsers without an on-device model see a clearly labelled recorded result.",
+  "dur": 14.681905
+ },
+ {
+  "id": "s10",
+  "visual": "slide:end",
+  "say": "Lapor72. Seventy-two hours, and the leaked records never leave your device. Try it at lapor72 dot web dot app.",
+  "cap": "Lapor72. 72 hours, and the leaked records never leave your device. Try it at lapor72.web.app",
+  "dur": 8.522449
+ }
+]
