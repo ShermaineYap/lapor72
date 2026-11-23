@@ -1,0 +1,202 @@
+[
+ {
+  "id": 101,
+  "lang": "en",
+  "text": "Members export: Goh Kah Wai | NRIC 880921105573 | +60 12-401 8877 | goh.kw@proton.me",
+  "labels": [
+   "email",
+   "identity_number",
+   "name",
+   "phone"
+  ],
+  "split": "heldout"
+ },
+ {
+  "id": 102,
+  "lang": "en",
+  "text": "Insurance claim #CL-2291: claimant Vimala Devi, admitted for dengue fever 3 days, ward 7B, Hospital Sungai Buloh.",
+  "labels": [
+   "health",
+   "name"
+  ],
+  "split": "heldout"
+ },
+ {
+  "id": 103,
+  "lang": "en",
+  "text": "Refund to: Syafiq Iskandar, Bank Islam account no. 1201-3004-5567-821, amount RM 89.90",
+  "labels": [
+   "financial",
+   "name"
+  ],
+  "split": "heldout"
+ },
+ {
+  "id": 104,
+  "lang": "en",
+  "text": "Shipping label: Unit 15-3, Residensi Harmoni, Persiaran Wawasan, 62000 Putrajaya. Attn: Ms Jessica Tan",
+  "labels": [
+   "address",
+   "name"
+  ],
+  "split": "heldout"
+ },
+ {
+  "id": 105,
+  "lang": "en",
+  "text": "Staff Wi-Fi: SSID OfficeNet, key = Gr33nTea!2026. VPN user hr_admin pass Hr#4455.",
+  "labels": [
+   "credentials"
+  ],
+  "split": "heldout"
+ },
+ {
+  "id": 106,
+  "lang": "en",
+  "text": "Weekly ops: server uptime 99.97%, 2 incidents (disk full, cert expiry), both resolved in under 1h.",
+  "labels": [
+   "none"
+  ],
+  "split": "heldout"
+ },
+ {
+  "id": 107,
+  "lang": "ms",
+  "text": "Senarai penerima bantuan: Mohd Hafiz Abdullah, no KP 780101015123, pendapatan isi rumah RM1,800 sebulan.",
+  "labels": [
+   "financial",
+   "identity_number",
+   "name"
+  ],
+  "split": "heldout"
+ },
+ {
+  "id": 108,
+  "lang": "ms",
+  "text": "Pesakit Cik Normah, 64 tahun, strok ringan, sedang fisioterapi di rumah. Waris: anak lelaki, 012 667 1209.",
+  "labels": [
+   "health",
+   "name",
+   "phone"
+  ],
+  "split": "heldout"
+ },
+ {
+  "id": 109,
+  "lang": "ms",
+  "text": "Tolong hantar dokumen ke rumah saya di 7, Jln Kenanga 2/1, Bandar Baru Bangi, 43650 Bangi.",
+  "labels": [
+   "address"
+  ],
+  "split": "heldout"
+ },
+ {
+  "id": 110,
+  "lang": "ms",
+  "text": "Jadual kelas tambahan: Isnin Matematik, Rabu Sains, Jumaat Bahasa Inggeris. Bilik 3A.",
+  "labels": [
+   "none"
+  ],
+  "split": "heldout"
+ },
+ {
+  "id": 111,
+  "lang": "ms",
+  "text": "Akaun admin Shopee kedai: emel kedaibundasofia@gmail.com, kata laluan Bunda1234",
+  "labels": [
+   "credentials",
+   "email"
+  ],
+  "split": "heldout"
+ },
+ {
+  "id": 112,
+  "lang": "zh",
+  "text": "会员资料：郑国良，手机 016-552 3301，电邮 gl.zheng@gmail.com",
+  "labels": [
+   "email",
+   "name",
+   "phone"
+  ],
+  "split": "heldout"
+ },
+ {
+  "id": 113,
+  "lang": "zh",
+  "text": "张太太的地址：槟城乔治市椰脚街 88 号，邮编 10200",
+  "labels": [
+   "address",
+   "name"
+  ],
+  "split": "heldout"
+ },
+ {
+  "id": 114,
+  "lang": "zh",
+  "text": "报销：李明 心脏病复诊 费用 RM350，已转账到他的大众银行户口 6655 1234 9900",
+  "labels": [
+   "financial",
+   "health",
+   "name"
+  ],
+  "split": "heldout"
+ },
+ {
+  "id": 115,
+  "lang": "zh",
+  "text": "下周一全体员工培训，地点：三楼会议室，时间上午九点。",
+  "labels": [
+   "none"
+  ],
+  "split": "heldout"
+ },
+ {
+  "id": 116,
+  "lang": "mixed",
+  "text": "Bro, customer Ravi tu bagi IC 900505-14-6631 untuk warranty, phone dia 0193345566",
+  "labels": [
+   "identity_number",
+   "name",
+   "phone"
+  ],
+  "split": "heldout"
+ },
+ {
+  "id": 117,
+  "lang": "mixed",
+  "text": "Kak, password Grab merchant kita tukar dah: Nasi@Lemak77, jgn bagi orang luar k",
+  "labels": [
+   "credentials"
+  ],
+  "split": "heldout"
+ },
+ {
+  "id": 118,
+  "lang": "mixed",
+  "text": "Patient Mdm Wong, 72yo, darah tinggi + gout, tinggal sorang kat Taman Desa, KL. Anak dia tak contactable.",
+  "labels": [
+   "address",
+   "health",
+   "name"
+  ],
+  "split": "heldout"
+ },
+ {
+  "id": 119,
+  "lang": "mixed",
+  "text": "Settlement dari Shopee masuk RM2,340.55 ke akaun Maybank 1140-2233-8890 semalam.",
+  "labels": [
+   "financial"
+  ],
+  "split": "heldout"
+ },
+ {
+  "id": 120,
+  "lang": "mixed",
+  "text": "Promo raya nanti kita buat bundle kuih + kad ucapan, target 300 set.",
+  "labels": [
+   "none"
+  ],
+  "split": "heldout"
+ }
+]

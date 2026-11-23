@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/ai.ts","./src/cases.ts","./src/core.test.ts","./src/detectors.ts","./src/firebase.ts","./src/main.tsx","./src/redact.ts","./src/rules.ts","./src/sample.ts"],"version":"5.9.3"}

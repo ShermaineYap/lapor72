@@ -1,0 +1,446 @@
+{
+ "path": "device",
+ "model": "Gemini Nano via Firebase AI Logic ONLY_ON_DEVICE, Chrome 157, MacBook Air M3",
+ "rows": [
+  {
+   "id": 1,
+   "src": "on_device",
+   "ms": 17284,
+   "got": [
+    "health",
+    "identity_number",
+    "name",
+    "phone"
+   ]
+  },
+  {
+   "id": 2,
+   "src": "on_device",
+   "ms": 1290,
+   "got": [
+    "credentials",
+    "email"
+   ]
+  },
+  {
+   "id": 3,
+   "src": "on_device",
+   "ms": 1301,
+   "got": [
+    "financial",
+    "name"
+   ]
+  },
+  {
+   "id": 4,
+   "src": "on_device",
+   "ms": 1339,
+   "got": [
+    "address",
+    "name",
+    "phone"
+   ]
+  },
+  {
+   "id": 5,
+   "src": "on_device",
+   "ms": 1052,
+   "got": []
+  },
+  {
+   "id": 6,
+   "src": "on_device",
+   "ms": 1097,
+   "got": [
+    "credentials",
+    "phone"
+   ]
+  },
+  {
+   "id": 7,
+   "src": "on_device",
+   "ms": 1290,
+   "got": [
+    "health",
+    "name",
+    "phone"
+   ]
+  },
+  {
+   "id": 8,
+   "src": "on_device",
+   "ms": 1066,
+   "got": [
+    "financial"
+   ]
+  },
+  {
+   "id": 9,
+   "src": "on_device",
+   "ms": 1059,
+   "got": []
+  },
+  {
+   "id": 10,
+   "src": "on_device",
+   "ms": 1686,
+   "got": [
+    "address",
+    "email",
+    "financial",
+    "identity_number",
+    "name"
+   ]
+  },
+  {
+   "id": 11,
+   "src": "on_device",
+   "ms": 1329,
+   "got": [
+    "address",
+    "financial",
+    "name"
+   ]
+  },
+  {
+   "id": 12,
+   "src": "on_device",
+   "ms": 1533,
+   "got": [
+    "identity_number",
+    "name",
+    "phone"
+   ]
+  },
+  {
+   "id": 13,
+   "src": "on_device",
+   "ms": 1162,
+   "got": [
+    "health",
+    "name"
+   ]
+  },
+  {
+   "id": 14,
+   "src": "on_device",
+   "ms": 1059,
+   "got": [
+    "credentials"
+   ]
+  },
+  {
+   "id": 15,
+   "src": "on_device",
+   "ms": 1068,
+   "got": []
+  },
+  {
+   "id": 16,
+   "src": "on_device",
+   "ms": 1208,
+   "got": [
+    "email",
+    "financial",
+    "name"
+   ]
+  },
+  {
+   "id": 17,
+   "src": "on_device",
+   "ms": 1345,
+   "got": [
+    "address",
+    "name",
+    "phone"
+   ]
+  },
+  {
+   "id": 18,
+   "src": "on_device",
+   "ms": 1258,
+   "got": [
+    "health",
+    "name"
+   ]
+  },
+  {
+   "id": 19,
+   "src": "on_device",
+   "ms": 1062,
+   "got": [
+    "address"
+   ]
+  },
+  {
+   "id": 20,
+   "src": "on_device",
+   "ms": 1407,
+   "got": [
+    "financial",
+    "identity_number",
+    "name"
+   ]
+  },
+  {
+   "id": 21,
+   "src": "on_device",
+   "ms": 1687,
+   "got": [
+    "address",
+    "identity_number",
+    "name",
+    "phone"
+   ]
+  },
+  {
+   "id": 22,
+   "src": "on_device",
+   "ms": 1334,
+   "got": [
+    "health",
+    "name"
+   ]
+  },
+  {
+   "id": 23,
+   "src": "on_device",
+   "ms": 1273,
+   "got": [
+    "financial",
+    "name"
+   ]
+  },
+  {
+   "id": 24,
+   "src": "on_device",
+   "ms": 1040,
+   "got": [
+    "credentials"
+   ]
+  },
+  {
+   "id": 25,
+   "src": "on_device",
+   "ms": 1018,
+   "got": []
+  },
+  {
+   "id": 26,
+   "src": "on_device",
+   "ms": 1438,
+   "got": [
+    "financial",
+    "name",
+    "phone"
+   ]
+  },
+  {
+   "id": 27,
+   "src": "on_device",
+   "ms": 1523,
+   "got": [
+    "address",
+    "health",
+    "identity_number",
+    "name"
+   ]
+  },
+  {
+   "id": 28,
+   "src": "on_device",
+   "ms": 1142,
+   "got": []
+  },
+  {
+   "id": 29,
+   "src": "on_device",
+   "ms": 1526,
+   "got": [
+    "address",
+    "email",
+    "financial"
+   ]
+  },
+  {
+   "id": 30,
+   "src": "on_device",
+   "ms": 1216,
+   "got": []
+  },
+  {
+   "id": 101,
+   "src": "on_device",
+   "ms": 1662,
+   "got": [
+    "email",
+    "identity_number",
+    "name",
+    "phone"
+   ]
+  },
+  {
+   "id": 102,
+   "src": "on_device",
+   "ms": 1211,
+   "got": [
+    "health",
+    "name"
+   ]
+  },
+  {
+   "id": 103,
+   "src": "on_device",
+   "ms": 1166,
+   "got": [
+    "financial",
+    "name"
+   ]
+  },
+  {
+   "id": 104,
+   "src": "on_device",
+   "ms": 1133,
+   "got": [
+    "address",
+    "name"
+   ]
+  },
+  {
+   "id": 105,
+   "src": "on_device",
+   "ms": 1104,
+   "got": [
+    "credentials"
+   ]
+  },
+  {
+   "id": 106,
+   "src": "on_device",
+   "ms": 1059,
+   "got": [
+    "name"
+   ]
+  },
+  {
+   "id": 107,
+   "src": "on_device",
+   "ms": 1668,
+   "got": [
+    "financial",
+    "identity_number",
+    "name"
+   ]
+  },
+  {
+   "id": 108,
+   "src": "on_device",
+   "ms": 1249,
+   "got": [
+    "health",
+    "name",
+    "phone"
+   ]
+  },
+  {
+   "id": 109,
+   "src": "on_device",
+   "ms": 1048,
+   "got": [
+    "address"
+   ]
+  },
+  {
+   "id": 110,
+   "src": "on_device",
+   "ms": 1073,
+   "got": []
+  },
+  {
+   "id": 111,
+   "src": "on_device",
+   "ms": 1256,
+   "got": [
+    "credentials",
+    "email"
+   ]
+  },
+  {
+   "id": 112,
+   "src": "on_device",
+   "ms": 1467,
+   "got": [
+    "email",
+    "name",
+    "phone"
+   ]
+  },
+  {
+   "id": 113,
+   "src": "on_device",
+   "ms": 1271,
+   "got": [
+    "address",
+    "name"
+   ]
+  },
+  {
+   "id": 114,
+   "src": "on_device",
+   "ms": 1264,
+   "got": [
+    "financial",
+    "health",
+    "name"
+   ]
+  },
+  {
+   "id": 115,
+   "src": "on_device",
+   "ms": 986,
+   "got": []
+  },
+  {
+   "id": 116,
+   "src": "on_device",
+   "ms": 1299,
+   "got": [
+    "identity_number",
+    "name",
+    "phone"
+   ]
+  },
+  {
+   "id": 117,
+   "src": "on_device",
+   "ms": 1032,
+   "got": [
+    "credentials"
+   ]
+  },
+  {
+   "id": 118,
+   "src": "on_device",
+   "ms": 1143,
+   "got": [
+    "address",
+    "health",
+    "name"
+   ]
+  },
+  {
+   "id": 119,
+   "src": "on_device",
+   "ms": 1008,
+   "got": [
+    "financial"
+   ]
+  },
+  {
+   "id": 120,
+   "src": "on_device",
+   "ms": 1008,
+   "got": []
+  }
+ ]
+}

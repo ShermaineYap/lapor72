@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lapor72 – Firebase AI Logic hybrid quick-start</title>
+<style>
+  body { font: 15px/1.5 system-ui, sans-serif; max-width: 860px; margin: 32px auto; padding: 0 16px; }
+  button { font: inherit; padding: 8px 14px; margin: 4px 6px 4px 0; cursor: pointer; }
+  pre { background: #f4f4f4; padding: 12px; white-space: pre-wrap; border-radius: 6px; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .ON_DEVICE { background: #d7f5dd; color: #11622a; } .IN_CLOUD { background: #dbe8ff; color: #1a4aa0; }
+</style>
+</head>
+<body>
+<h1>Lapor72 – hybrid inference quick-start</h1>
+<p>Checks that Firebase AI Logic answers on-device (Gemini Nano in Chrome) and in the cloud (Gemini), and reports which path served each response.</p>
+<button id="btnInit">1. Prepare on-device model</button>
+<button id="btnDevice">2. Prompt (prefer on-device)</button>
+<button id="btnCloud">3. Prompt (cloud only)</button>
+<button id="btnJson">4. Structured output (prefer on-device)</button>
+<pre id="log">Ready.</pre>
+
+<script type="module">
+  // On localhost, App Check uses a debug token: the SDK prints it to the console the first time;
+  // register it in Firebase console > App Check > Apps > Lapor72 Web > Manage debug tokens.
+  if (['localhost', '127.0.0.1'].includes(location.hostname)) self.FIREBASE_APPCHECK_DEBUG_TOKEN = true;
+
+  const V = '13.4.0';
+  const { initializeApp } = await import(`https://www.gstatic.com/firebasejs/${V}/firebase-app.js`);
+  const { initializeAppCheck, ReCaptchaEnterpriseProvider } = await import(`https://www.gstatic.com/firebasejs/${V}/firebase-app-check.js`);
+  const { getAI, getGenerativeModel, GoogleAIBackend, InferenceMode, Schema } = await import(`https://www.gstatic.com/firebasejs/${V}/firebase-ai.js`);
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAt4FTph_LtWz0djucZEAW3tU3NoC_DEMo",
+    authDomain: "lapor72.firebaseapp.com",
+    projectId: "lapor72",
+    storageBucket: "lapor72.firebasestorage.app",
+    messagingSenderId: "755873474638",
+    appId: "1:755873474638:web:9f0c093e2433cddf19bb1f",
+  };
+  const RECAPTCHA_SITE_KEY = "6Lf59SwuAAAAADPVxTrSIYzwsQQsdor637ZT7neg"; // public site key
+
+  const app = initializeApp(firebaseConfig);
+  initializeAppCheck(app, { provider: new ReCaptchaEnterpriseProvider(RECAPTCHA_SITE_KEY), isTokenAutoRefreshEnabled: true });
+  const ai = getAI(app, { backend: new GoogleAIBackend() });
+
+  const CLOUD_MODEL = 'gemini-3.8-flash';
+  const preferDevice = getGenerativeModel(ai, { mode: InferenceMode.PREFER_ON_DEVICE, inCloudParams: { model: CLOUD_MODEL } });
+  const cloudOnly = getGenerativeModel(ai, { mode: InferenceMode.ONLY_IN_CLOUD, inCloudParams: { model: CLOUD_MODEL } });
+
+  // Structured output must be declared for both paths: JSON Schema for Chrome, Firebase Schema for cloud.
+  const CATS = ['identity_number', 'phone', 'email', 'address', 'financial', 'health', 'credentials', 'none'];
+  const jsonSchema = { type: 'object', properties: { categories: { type: 'array', items: { type: 'string', enum: CATS } }, sensitive: { type: 'boolean' } }, required: ['categories', 'sensitive'] };
+  const cloudSchema = Schema.object({ properties: { categories: Schema.array({ items: Schema.enumString({ enum: CATS }) }), sensitive: Schema.boolean() } });
+  const jsonModel = getGenerativeModel(ai, {
+    mode: InferenceMode.PREFER_ON_DEVICE,
+    onDeviceParams: { promptOptions: { responseConstraint: jsonSchema } },
+    inCloudParams: { model: CLOUD_MODEL, generationConfig: { responseMimeType: 'application/json', responseSchema: cloudSchema } },
+  });
+
+  const logEl = document.getElementById('log');
+  window.__results = [];
+  const log = (html) => { logEl.innerHTML += '\n' + html; };
+  const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+
+  async function run(label, model, prompt) {
+    const t = performance.now();
+    try {
+      const result = await model.generateContent(prompt);
+      const ms = Math.round(performance.now() - t);
+      const src = result.response.inferenceSource;
+      const text = result.response.text();
+      window.__results.push({ label, src, ms, text });
+      log(`<b>${esc(label)}</b> <span class="badge ${src}">${src}</span> ${ms} ms\n${esc(text)}`);
+    } catch (e) {
+      window.__results.push({ label, error: String(e) });
+      log(`<b>${esc(label)}</b> ERROR: ${esc(e)}`);
+    }
+  }
+
+  document.getElementById('btnInit').onclick = async () => {
+    log('Preparing on-device model…');
+    try {
+      await preferDevice.initializeDeviceModel((p) => log(`download ${Math.round(p * 100)}%`));
+      log('On-device availability: ' + (typeof LanguageModel !== 'undefined' ? await LanguageModel.availability() : 'no Prompt API'));
+    } catch (e) { log('ERROR: ' + esc(e)); }
+  };
+  const SAMPLE = 'name,ic_no,phone,diagnosis\nTan Wei Ming,900101-14-5678,012-3456789,Type 2 diabetes';
+  document.getElementById('btnDevice').onclick = () => run('Prefer on-device', preferDevice, 'In one sentence, what is a personal data breach?');
+  document.getElementById('btnCloud').onclick = () => run('Cloud only', cloudOnly, 'In one sentence, what is a personal data breach?');
+  document.getElementById('btnJson').onclick = () => run('Structured (prefer on-device)', jsonModel, 'List the personal data categories in these leaked records:\n' + SAMPLE);
+</script>
+</body>
+</html>

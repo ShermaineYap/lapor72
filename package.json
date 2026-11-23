@@ -1,0 +1,27 @@
+{
+  "name": "lapor72",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A 72-hour data-breach desk for small Malaysian businesses. Leaked records are analysed on-device with Gemini Nano via Firebase AI Logic; only a redacted fact sheet goes to cloud Gemini.",
+  "license": "Apache-2.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "firebase": "13.4.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "latest",
+    "typescript": "^5.6.0",
+    "vite": "latest",
+    "vitest": "latest"
+  }
+}

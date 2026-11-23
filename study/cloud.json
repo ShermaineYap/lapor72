@@ -1,0 +1,445 @@
+{
+ "path": "cloud",
+ "model": "gemini-3.5-flash-lite via Firebase AI Logic ONLY_IN_CLOUD, free tier, 4 s gap between calls",
+ "rows": [
+  {
+   "id": 1,
+   "src": "in_cloud",
+   "ms": 2019,
+   "got": [
+    "health",
+    "identity_number",
+    "name",
+    "phone"
+   ]
+  },
+  {
+   "id": 2,
+   "src": "in_cloud",
+   "ms": 2191,
+   "got": [
+    "credentials",
+    "email"
+   ]
+  },
+  {
+   "id": 3,
+   "src": "in_cloud",
+   "ms": 1528,
+   "got": [
+    "financial",
+    "name"
+   ]
+  },
+  {
+   "id": 4,
+   "src": "in_cloud",
+   "ms": 2081,
+   "got": [
+    "address",
+    "name",
+    "phone"
+   ]
+  },
+  {
+   "id": 5,
+   "src": "in_cloud",
+   "ms": 3998,
+   "got": []
+  },
+  {
+   "id": 6,
+   "src": "in_cloud",
+   "ms": 3032,
+   "got": [
+    "credentials",
+    "phone"
+   ]
+  },
+  {
+   "id": 7,
+   "src": "in_cloud",
+   "ms": 4126,
+   "got": [
+    "health",
+    "name",
+    "phone"
+   ]
+  },
+  {
+   "id": 8,
+   "src": "in_cloud",
+   "ms": 1271,
+   "got": [
+    "financial"
+   ]
+  },
+  {
+   "id": 9,
+   "src": "in_cloud",
+   "ms": 2068,
+   "got": []
+  },
+  {
+   "id": 10,
+   "src": "in_cloud",
+   "ms": 8174,
+   "got": [
+    "email",
+    "financial",
+    "identity_number",
+    "name"
+   ]
+  },
+  {
+   "id": 11,
+   "src": "in_cloud",
+   "ms": 1465,
+   "got": [
+    "address",
+    "financial",
+    "name"
+   ]
+  },
+  {
+   "id": 12,
+   "src": "in_cloud",
+   "ms": 1663,
+   "got": [
+    "identity_number",
+    "name",
+    "phone"
+   ]
+  },
+  {
+   "id": 13,
+   "src": "in_cloud",
+   "ms": 3396,
+   "got": [
+    "health",
+    "name"
+   ]
+  },
+  {
+   "id": 14,
+   "src": "in_cloud",
+   "ms": 1552,
+   "got": [
+    "credentials"
+   ]
+  },
+  {
+   "id": 15,
+   "src": "in_cloud",
+   "ms": 1389,
+   "got": []
+  },
+  {
+   "id": 16,
+   "src": "in_cloud",
+   "ms": 6371,
+   "got": [
+    "email",
+    "financial",
+    "name"
+   ]
+  },
+  {
+   "id": 17,
+   "src": "in_cloud",
+   "ms": 1600,
+   "got": [
+    "address",
+    "name",
+    "phone"
+   ]
+  },
+  {
+   "id": 18,
+   "src": "in_cloud",
+   "ms": 5883,
+   "got": [
+    "health",
+    "name"
+   ]
+  },
+  {
+   "id": 19,
+   "src": "in_cloud",
+   "ms": 5116,
+   "got": []
+  },
+  {
+   "id": 20,
+   "src": "in_cloud",
+   "ms": 1897,
+   "got": [
+    "financial",
+    "identity_number",
+    "name"
+   ]
+  },
+  {
+   "id": 21,
+   "src": "in_cloud",
+   "ms": 1363,
+   "got": [
+    "address",
+    "identity_number",
+    "name",
+    "phone"
+   ]
+  },
+  {
+   "id": 22,
+   "src": "in_cloud",
+   "ms": 3637,
+   "got": [
+    "health",
+    "name"
+   ]
+  },
+  {
+   "id": 23,
+   "src": "in_cloud",
+   "ms": 2205,
+   "got": [
+    "financial",
+    "name"
+   ]
+  },
+  {
+   "id": 24,
+   "src": "in_cloud",
+   "ms": 1581,
+   "got": [
+    "credentials"
+   ]
+  },
+  {
+   "id": 25,
+   "src": "in_cloud",
+   "ms": 4011,
+   "got": []
+  },
+  {
+   "id": 26,
+   "src": "in_cloud",
+   "ms": 1557,
+   "got": [
+    "financial",
+    "name",
+    "phone"
+   ]
+  },
+  {
+   "id": 27,
+   "src": "in_cloud",
+   "ms": 1426,
+   "got": [
+    "address",
+    "health",
+    "identity_number",
+    "name"
+   ]
+  },
+  {
+   "id": 28,
+   "src": "in_cloud",
+   "ms": 4383,
+   "got": [
+    "credentials"
+   ]
+  },
+  {
+   "id": 29,
+   "src": "in_cloud",
+   "ms": 1977,
+   "got": [
+    "address",
+    "email",
+    "financial",
+    "phone"
+   ]
+  },
+  {
+   "id": 30,
+   "src": "in_cloud",
+   "ms": 6490,
+   "got": []
+  },
+  {
+   "id": 101,
+   "src": "in_cloud",
+   "ms": 1478,
+   "got": [
+    "email",
+    "identity_number",
+    "name",
+    "phone"
+   ]
+  },
+  {
+   "id": 102,
+   "src": "in_cloud",
+   "ms": 1422,
+   "got": [
+    "address",
+    "health",
+    "name"
+   ]
+  },
+  {
+   "id": 103,
+   "src": "in_cloud",
+   "ms": 1531,
+   "got": [
+    "financial",
+    "name"
+   ]
+  },
+  {
+   "id": 104,
+   "src": "in_cloud",
+   "ms": 1628,
+   "got": [
+    "address",
+    "name"
+   ]
+  },
+  {
+   "id": 105,
+   "src": "in_cloud",
+   "ms": 1489,
+   "got": [
+    "credentials"
+   ]
+  },
+  {
+   "id": 106,
+   "src": "in_cloud",
+   "ms": 3646,
+   "got": []
+  },
+  {
+   "id": 107,
+   "src": "in_cloud",
+   "ms": 3769,
+   "got": [
+    "financial",
+    "identity_number",
+    "name"
+   ]
+  },
+  {
+   "id": 108,
+   "src": "in_cloud",
+   "ms": 1814,
+   "got": [
+    "health",
+    "name",
+    "phone"
+   ]
+  },
+  {
+   "id": 109,
+   "src": "in_cloud",
+   "ms": 1382,
+   "got": [
+    "address"
+   ]
+  },
+  {
+   "id": 110,
+   "src": "in_cloud",
+   "ms": 1534,
+   "got": []
+  },
+  {
+   "id": 111,
+   "src": "in_cloud",
+   "ms": 1190,
+   "got": [
+    "credentials",
+    "email"
+   ]
+  },
+  {
+   "id": 112,
+   "src": "in_cloud",
+   "ms": 5534,
+   "got": [
+    "email",
+    "name",
+    "phone"
+   ]
+  },
+  {
+   "id": 113,
+   "src": "in_cloud",
+   "ms": 3259,
+   "got": [
+    "address",
+    "name"
+   ]
+  },
+  {
+   "id": 114,
+   "src": "in_cloud",
+   "ms": 1568,
+   "got": [
+    "financial",
+    "health",
+    "name"
+   ]
+  },
+  {
+   "id": 115,
+   "src": "in_cloud",
+   "ms": 1125,
+   "got": []
+  },
+  {
+   "id": 116,
+   "src": "in_cloud",
+   "ms": 1491,
+   "got": [
+    "identity_number",
+    "name",
+    "phone"
+   ]
+  },
+  {
+   "id": 117,
+   "src": "in_cloud",
+   "ms": 4673,
+   "got": [
+    "credentials"
+   ]
+  },
+  {
+   "id": 118,
+   "src": "in_cloud",
+   "ms": 4536,
+   "got": [
+    "address",
+    "health",
+    "name"
+   ]
+  },
+  {
+   "id": 119,
+   "src": "in_cloud",
+   "ms": 2427,
+   "got": [
+    "financial"
+   ]
+  },
+  {
+   "id": 120,
+   "src": "in_cloud",
+   "ms": 1351,
+   "got": []
+  }
+ ]
+}

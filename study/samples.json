@@ -1,0 +1,278 @@
+[
+ {
+  "id": 1,
+  "lang": "en",
+  "text": "name,ic_no,phone,diagnosis\nTan Wei Ming,900101-14-5678,012-3456789,Type 2 diabetes\nNur Aisyah Rahman,951230-08-2214,017-8812345,Asthma",
+  "labels": [
+   "health",
+   "identity_number",
+   "name",
+   "phone"
+  ]
+ },
+ {
+  "id": 2,
+  "lang": "en",
+  "text": "Customer export 14/11\nemail,password_hash,last_login\nkevin.lim88@gmail.com,$2b$10$Qz8f...,2026-11-10\nsarah_ng@yahoo.com,$2b$10$Lp2a...,2026-11-12",
+  "labels": [
+   "credentials",
+   "email"
+  ]
+ },
+ {
+  "id": 3,
+  "lang": "en",
+  "text": "Payroll Oct: Rajesh a/l Muthu, Acct Maybank 5140 2238 9912, net pay RM 4,250.00; Mei Ling Chong, Acct CIMB 8001 4421 7763, net pay RM 3,980.00",
+  "labels": [
+   "financial",
+   "name"
+  ]
+ },
+ {
+  "id": 4,
+  "lang": "en",
+  "text": "Delivery list: 1) Farah Hani, No 12 Jalan Mawar 3, Taman Bukit Indah, 81200 Johor Bahru, 019-221 3344  2) Daniel Wong, 8 Lorong Seri 5, 11900 Bayan Lepas, Penang, 016-445 9087",
+  "labels": [
+   "address",
+   "name",
+   "phone"
+  ]
+ },
+ {
+  "id": 5,
+  "lang": "en",
+  "text": "Inventory update: 40 units A4 paper, 12 toner cartridges (HP 26A), 3 whiteboard markers boxes. Reorder level reached for toner.",
+  "labels": [
+   "none"
+  ]
+ },
+ {
+  "id": 6,
+  "lang": "en",
+  "text": "Hi team, the shared login for the clinic booking portal is admin / Klinik@2026! - please don't change it. OTP goes to the front desk phone.",
+  "labels": [
+   "credentials"
+  ]
+ },
+ {
+  "id": 7,
+  "lang": "en",
+  "text": "Patient: Lee Siew Lan, DOB 12/03/1958, BP 160/100, on amlodipine 5mg, follow-up for hypertension in 2 weeks. Contact daughter 012-778 6655.",
+  "labels": [
+   "health",
+   "name",
+   "phone"
+  ]
+ },
+ {
+  "id": 8,
+  "lang": "en",
+  "text": "Card payments failed batch: 4111 1111 1111 1111 exp 09/28, 5500 0000 0000 0004 exp 01/27 - customer names withheld.",
+  "labels": [
+   "financial"
+  ]
+ },
+ {
+  "id": 9,
+  "lang": "en",
+  "text": "Quarterly sales by region: Klang Valley RM1.2m, Penang RM640k, Johor RM580k. Growth 8% QoQ. No customer data in this file.",
+  "labels": [
+   "none"
+  ]
+ },
+ {
+  "id": 10,
+  "lang": "en",
+  "text": "Tuition centre enrolment: student Aiman Hakim (Form 3), parent Hakim bin Yusof, 880515-01-6677, hakim.yusof@outlook.com, fees overdue RM600",
+  "labels": [
+   "email",
+   "financial",
+   "identity_number",
+   "name"
+  ]
+ },
+ {
+  "id": 11,
+  "lang": "ms",
+  "text": "Senarai pelanggan: Siti Aminah binti Ahmad, no. akaun Maybank 1234-5678-9012, alamat No 12 Jalan Mawar, 40000 Shah Alam",
+  "labels": [
+   "address",
+   "financial",
+   "name"
+  ]
+ },
+ {
+  "id": 12,
+  "lang": "ms",
+  "text": "nama,no_kp,telefon\nMuhammad Firdaus bin Kamal,920714-10-5531,013-998 1122\nNurul Izzah binti Razak,990203-14-6624,011-2345 6789",
+  "labels": [
+   "identity_number",
+   "name",
+   "phone"
+  ]
+ },
+ {
+  "id": 13,
+  "lang": "ms",
+  "text": "Rekod pesakit: Encik Zainal Abidin, menghidap kencing manis dan darah tinggi, ubat metformin 500mg dua kali sehari.",
+  "labels": [
+   "health",
+   "name"
+  ]
+ },
+ {
+  "id": 14,
+  "lang": "ms",
+  "text": "Kata laluan e-mel syarikat ialah Syarikat123 dan PIN mesin juruwang 4482. Jangan kongsi.",
+  "labels": [
+   "credentials"
+  ]
+ },
+ {
+  "id": 15,
+  "lang": "ms",
+  "text": "Stok kedai: beras 10kg x 25 beg, minyak masak 5kg x 18, gula 1kg x 40. Pesanan seterusnya hari Isnin.",
+  "labels": [
+   "none"
+  ]
+ },
+ {
+  "id": 16,
+  "lang": "ms",
+  "text": "Pemohon pinjaman: Rosli bin Hassan, gaji bulanan RM3,200, baki akaun CIMB RM1,450.20, emel rosli.hassan@gmail.com",
+  "labels": [
+   "email",
+   "financial",
+   "name"
+  ]
+ },
+ {
+  "id": 17,
+  "lang": "ms",
+  "text": "Alamat penghantaran: Lot 45, Kampung Baru Sungai Buloh, 47000 Selangor. Penerima: Puan Halimah, tel 019-334 7788.",
+  "labels": [
+   "address",
+   "name",
+   "phone"
+  ]
+ },
+ {
+  "id": 18,
+  "lang": "ms",
+  "text": "Senarai murid tadika: Adam Danish (5 tahun), alahan kacang; Aisyah Sofea (4 tahun), asma. Ibu bapa boleh dihubungi melalui kumpulan WhatsApp.",
+  "labels": [
+   "health",
+   "name"
+  ]
+ },
+ {
+  "id": 19,
+  "lang": "ms",
+  "text": "Laporan mesyuarat: bajet acara dinaikkan kepada RM15,000. Tempahan dewan disahkan untuk 5 Disember.",
+  "labels": [
+   "none"
+  ]
+ },
+ {
+  "id": 20,
+  "lang": "ms",
+  "text": "Pekerja: Kumar a/l Rajan, no pasport A12345678, permit kerja tamat 2027, akaun bank RHB 2-14523-00098765-1",
+  "labels": [
+   "financial",
+   "identity_number",
+   "name"
+  ]
+ },
+ {
+  "id": 21,
+  "lang": "zh",
+  "text": "客户名单：陈伟明，身份证 850312-10-5523，电话 012-889 7766，地址：吉隆坡蕉赖路 23 号",
+  "labels": [
+   "address",
+   "identity_number",
+   "name",
+   "phone"
+  ]
+ },
+ {
+  "id": 22,
+  "lang": "zh",
+  "text": "病人记录：林美玲，糖尿病，高血压，每天服用二甲双胍。复诊日期 12 月 3 日。",
+  "labels": [
+   "health",
+   "name"
+  ]
+ },
+ {
+  "id": 23,
+  "lang": "zh",
+  "text": "员工薪水：黄志强 银行户口 1122 3344 5566，月薪 RM5,800；张丽华 银行户口 9988 7766 5544，月薪 RM4,600",
+  "labels": [
+   "financial",
+   "name"
+  ]
+ },
+ {
+  "id": 24,
+  "lang": "zh",
+  "text": "系统管理员密码：Admin#8899，备用 PIN：2020。请勿外传。",
+  "labels": [
+   "credentials"
+  ]
+ },
+ {
+  "id": 25,
+  "lang": "zh",
+  "text": "本月仓库库存：纸箱 300 个，胶带 120 卷，标签纸 45 包。下周补货。",
+  "labels": [
+   "none"
+  ]
+ },
+ {
+  "id": 26,
+  "lang": "mixed",
+  "text": "Boss, ni list customer yg belum bayar: Ah Seng 012-334 5566 hutang RM800, Kak Ros 017-665 4433 hutang RM1,200. Tolong follow up ya.",
+  "labels": [
+   "financial",
+   "name",
+   "phone"
+  ]
+ },
+ {
+  "id": 27,
+  "lang": "mixed",
+  "text": "Eh sis, IC customer tu 940808-07-5512, nama dia Liyana binti Hamid, rumah dia kat Taman Melawati, 53100 KL. Dia nak claim insurance sakit jantung.",
+  "labels": [
+   "address",
+   "health",
+   "identity_number",
+   "name"
+  ]
+ },
+ {
+  "id": 28,
+  "lang": "mixed",
+  "text": "Password wifi kedai: kopitiam2026, admin router pun sama. Customer tanya just bagi wifi only ok.",
+  "labels": [
+   "credentials"
+  ]
+ },
+ {
+  "id": 29,
+  "lang": "mixed",
+  "text": "Order #4471 paid via DuitNow to acct 8888 1234 5678 (Public Bank), buyer email jasonteh_99@hotmail.com, hantar ke 22 Jalan SS2/24, 47300 PJ",
+  "labels": [
+   "address",
+   "email",
+   "financial"
+  ]
+ },
+ {
+  "id": 30,
+  "lang": "mixed",
+  "text": "Meeting tadi ok, kita launch promo 11.11 dengan diskaun 20% semua item. Banner siap Jumaat.",
+  "labels": [
+   "none"
+  ]
+ }
+]

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Lapor72 detection study</title>
+<style>body{font:14px/1.5 system-ui,sans-serif;max-width:900px;margin:24px auto;padding:0 16px}pre{background:#f4f4f4;padding:10px;white-space:pre-wrap}</style></head>
+<body>
+<h1>Lapor72 detection study</h1>
+<p>Runs 50 synthetic leaked-record samples (30 development + 20 held-out) through one path and records the categories found.</p>
+<button id="dev">Run on-device (Gemini Nano)</button>
+<button id="cloud">Run cloud (gemini-3.5-flash-lite)</button>
+<pre id="log"></pre>
+<script type="module">
+if (['localhost', '127.0.0.1'].includes(location.hostname)) self.FIREBASE_APPCHECK_DEBUG_TOKEN = true;
+const V = '13.4.0';
+const { initializeApp } = await import(`https://www.gstatic.com/firebasejs/${V}/firebase-app.js`);
+const { initializeAppCheck, ReCaptchaEnterpriseProvider } = await import(`https://www.gstatic.com/firebasejs/${V}/firebase-app-check.js`);
+const { getAI, getGenerativeModel, GoogleAIBackend, InferenceMode, Schema } = await import(`https://www.gstatic.com/firebasejs/${V}/firebase-ai.js`);
+const app = initializeApp({ apiKey: "AIzaSyAt4FTph_LtWz0djucZEAW3tU3NoC_DEMo", authDomain: "lapor72.firebaseapp.com", projectId: "lapor72", storageBucket: "lapor72.firebasestorage.app", messagingSenderId: "755873474638", appId: "1:755873474638:web:9f0c093e2433cddf19bb1f" });
+initializeAppCheck(app, { provider: new ReCaptchaEnterpriseProvider("6Lf59SwuAAAAADPVxTrSIYzwsQQsdor637ZT7neg"), isTokenAutoRefreshEnabled: true });
+const ai = getAI(app, { backend: new GoogleAIBackend() });
+
+const CATS = ['name', 'identity_number', 'phone', 'email', 'address', 'financial', 'health', 'credentials'];
+const jsonSchema = { type: 'object', properties: { categories: { type: 'array', items: { type: 'string', enum: CATS } } }, required: ['categories'] };
+const cloudSchema = Schema.object({ properties: { categories: Schema.array({ items: Schema.enumString({ enum: CATS }) }) } });
+const INSTRUCTION = `You triage leaked records for a data-breach report. List every category of personal data that appears in the text.
+Categories: name (a real person's name), identity_number (national ID such as MyKad/NRIC, passport number), phone, email,
+address (street or postal address), financial (bank or card number, salary, income, balance, debt), health (medical condition,
+medication, treatment), credentials (password, PIN, OTP, login secret). Return an empty list if none appear.
+The text may be in English, Malay or Chinese, or mixed.
+
+Text:
+`;
+const deviceModel = getGenerativeModel(ai, { mode: InferenceMode.ONLY_ON_DEVICE, onDeviceParams: { promptOptions: { responseConstraint: jsonSchema } } });
+const cloudModel = getGenerativeModel(ai, { mode: InferenceMode.ONLY_IN_CLOUD, inCloudParams: { model: 'gemini-3.5-flash-lite', generationConfig: { responseMimeType: 'application/json', responseSchema: cloudSchema } } });
+
+const samples = [...await (await fetch('samples.json')).json(), ...await (await fetch('heldout.json')).json()];
+const logEl = document.getElementById('log'); const log = (s) => (logEl.textContent += s + '\n');
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+window.__study = { status: 'idle', rows: [] };
+
+async function runAll(path, model, gapMs) {
+  window.__study = { status: 'running', path, rows: [] };
+  for (const s of samples) {
+    let row = { id: s.id, path };
+    for (let attempt = 0; attempt < 4; attempt++) {
+      const t = performance.now();
+      try {
+        const r = await model.generateContent(INSTRUCTION + s.text);
+        row = { ...row, ms: Math.round(performance.now() - t), src: r.response.inferenceSource, got: (JSON.parse(r.response.text()).categories || []).filter((c) => CATS.includes(c)).sort() };
+        break;
+      } catch (e) {
+        row.error = String(e).slice(0, 160);
+        if (/429|500|503/.test(row.error)) { await sleep(15000); continue; }
+        break;
+      }
+    }
+    window.__study.rows.push(row);
+    log(`${s.id} ${row.src || 'ERR'} ${row.ms ?? '-'}ms ${JSON.stringify(row.got || row.error)}`);
+    if (gapMs) await sleep(gapMs);
+  }
+  window.__study.status = 'done';
+  log('DONE');
+}
+document.getElementById('dev').onclick = () => runAll('device', deviceModel, 0);
+document.getElementById('cloud').onclick = () => runAll('cloud', cloudModel, 4000);
+</script></body></html>

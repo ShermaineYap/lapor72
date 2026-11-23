@@ -1,0 +1,62 @@
+
+## dev (30)
+system       P     R     F1    exact  fp fn
+regex        1.00  0.87  0.93  22/30  0  8
+nano         0.95  0.98  0.97  26/30  3  1
+nano+regex   0.95  1.00  0.98  27/30  3  0
+cloud        0.97  1.00  0.98  28/30  2  0
+cloud+regex  0.97  1.00  0.98  28/30  2  0
+
+## held-out (20)
+system       P     R     F1    exact  fp fn
+regex        1.00  0.64  0.78  10/20  0  13
+nano         0.97  1.00  0.99  19/20  1  0
+nano+regex   0.97  1.00  0.99  19/20  1  0
+cloud        0.97  1.00  0.99  19/20  1  0
+cloud+regex  0.97  1.00  0.99  19/20  1  0
+
+## all, en
+system       P     R     F1    exact  fp fn
+regex        1.00  0.71  0.83  9/16   0  9
+nano         0.91  1.00  0.95  13/16  3  0
+nano+regex   0.91  1.00  0.95  13/16  3  0
+cloud        0.94  1.00  0.97  14/16  2  0
+cloud+regex  0.94  1.00  0.97  14/16  2  0
+
+## all, ms
+system       P     R     F1    exact  fp fn
+regex        1.00  0.90  0.95  13/15  0  3
+nano         0.97  1.00  0.98  14/15  1  0
+nano+regex   0.97  1.00  0.98  14/15  1  0
+cloud        1.00  1.00  1.00  15/15  0  0
+cloud+regex  1.00  1.00  1.00  15/15  0  0
+
+## all, zh
+system       P     R     F1    exact  fp fn
+regex        1.00  0.65  0.79  3/9    0  6
+nano         1.00  1.00  1.00  9/9    0  0
+nano+regex   1.00  1.00  1.00  9/9    0  0
+cloud        1.00  1.00  1.00  9/9    0  0
+cloud+regex  1.00  1.00  1.00  9/9    0  0
+
+## all, mixed
+system       P     R     F1    exact  fp fn
+regex        1.00  0.84  0.91  7/10   0  3
+nano         1.00  0.95  0.97  9/10   0  1
+nano+regex   1.00  1.00  1.00  10/10  0  0
+cloud        0.95  1.00  0.97  9/10   1  0
+cloud+regex  0.95  1.00  0.97  9/10   1  0
+
+## per-category recall, all 50
+name             n=28 regex=11  nano=28  nano+regex=28  cloud=28  cloud+regex=28
+identity_number  n=9 regex=9  nano=9  nano+regex=9  cloud=9  cloud+regex=9
+phone            n=11 regex=10  nano=11  nano+regex=11  cloud=11  cloud+regex=11
+email            n=7 regex=7  nano=7  nano+regex=7  cloud=7  cloud+regex=7
+address          n=10 regex=10  nano=10  nano+regex=10  cloud=10  cloud+regex=10
+financial        n=13 regex=12  nano=13  nano+regex=13  cloud=13  cloud+regex=13
+health           n=10 regex=9  nano=10  nano+regex=10  cloud=10  cloud+regex=10
+credentials      n=8 regex=7  nano=7  nano+regex=8  cloud=8  cloud+regex=8
+
+device: 50/50 answered, errors 0, median 1249 ms, p90 1662 ms, sources {"on_device":50}
+
+cloud: 50/50 answered, errors 0, median 1977 ms, p90 5534 ms, sources {"in_cloud":50}
